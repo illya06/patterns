@@ -16,6 +16,19 @@ namespace patterns
             Slave2 slave2 = new ();
             DungeonMaster master = new (slave1, slave2);
             slave1.OpenTheLocker();
+
+            //snapshot pattern
+            Originator originator = new Originator("0");
+            Caretaker caretaker = new Caretaker(originator);
+
+            caretaker.Backup();
+            originator.DoSomething();
+
+            caretaker.Backup();
+            originator.DoSomething();
+
+            Console.WriteLine("\nrollback!\n");
+            caretaker.Undo();
         }
     }
 }
