@@ -11,7 +11,11 @@ namespace patterns
             foreach (var item in nums)
                 System.Console.WriteLine(item);
 
-
+            //mediator pattern
+            Slave1 slave1 = new ();
+            Slave2 slave2 = new ();
+            DungeonMaster master = new (slave1, slave2);
+            slave1.OpenTheLocker();
         }
     }
 }
