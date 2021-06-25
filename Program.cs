@@ -6,7 +6,12 @@ namespace patterns
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //iterator pattern
+            NumericCollection nums = new ("Sl4ve M2sTe4");
+            foreach (var item in nums)
+                System.Console.WriteLine(item);
+
+
         }
     }
 }
